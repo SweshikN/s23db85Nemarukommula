@@ -8,13 +8,13 @@ var elephant_controller = require('../controllers/elephant');
 router.get('/', api_controller.api);
 /// elephant ROUTES ///
 // POST request for creating a elephant.
-router.post('/elephant', elephant_controller.elephant_create_post);
+router.post('/elephants', elephant_controller.elephant_create_post);
 // DELETE request to delete elephant.
-router.delete('/elephant/:id', elephant_controller.elephant_delete);
+router.delete('/elephants/:id', elephant_controller.elephant_delete);
 // PUT request to update elephant.
-router.put('/elephant/:id', elephant_controller.elephant_update_put);
+router.put('/elephants/:id', elephant_controller.elephant_update_put);
 // GET request for one elephant.
-router.get('/elephant/:id', elephant_controller.elephant_detail);
+router.get('/elephants/:id', elephant_controller.elephant_detail);
 // GET request for list of all elephant items.
-router.get('/elephant', elephant_controller.elephant_list);
+router.get('/elephants', elephant_controller.elephant_list);
 module.exports = router;

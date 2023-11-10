@@ -2,13 +2,13 @@ var elephant = require('../models/elephant');
 // List of all elephants
 exports.elephant_list = async function(req, res) {
     try{
-        theelephant = await elephant.find();
-        res.send(theelephant);
-        }
-        catch(err){
-        res.status(500);
-        res.send(`{"error": ${err}}`);
-        }
+    theelephants = await elephant.find();
+    res.send(theelephants);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
 };
 // for a specific elephant.
 exports.elephant_detail = function(req, res) {
@@ -30,8 +30,8 @@ res.send('NOT IMPLEMENTED: elephant update PUT' + req.params.id);
 // Handle a show all view
 exports.elephant_view_all_Page = async function(req, res) {
     try{
-    theelephant = await elephant.find();
-    res.render('elephant', { title: 'elephant Search Results', results: theelephant });
+    theelephants = await elephant.find();
+    res.render('elephant', { title: 'elephant Search Results', results: theelephants });
     }
     catch(err){
     res.status(500);
@@ -56,4 +56,4 @@ exports.elephant_view_all_Page = async function(req, res) {
         res.status(500);
         res.send(`{"error": ${err}}`);
         }
-        };    
+        };
