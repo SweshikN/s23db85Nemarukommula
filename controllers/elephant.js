@@ -89,11 +89,11 @@ exports.elephant_update_put = async function(req, res) {
     failed`);
     }
     };
-// Handle Costume delete on DELETE.
-exports.costume_delete = async function(req, res) {
+// Handle elephant delete on DELETE.
+exports.elephant_delete = async function(req, res) {
     console.log("delete " + req.params.id)
     try {
-    result = await Costume.findByIdAndDelete( req.params.id)
+    result = await elephant.findByIdAndDelete( req.params.id)
     console.log("Removed " + result)
     res.send(result)
     } catch (err) {
