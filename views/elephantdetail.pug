@@ -1,0 +1,23 @@
+extends layout
+block content
+h1= title
+if(toShow == null)
+    h2 No instance 
+else   
+- let elephantid = toShow._id
+- let elephant_type = toShow.elephant_type
+- let elephantcost = toShow.cost
+- let elephantsize = toShow.size
+div
+div.row
+div(class='elephantAttr mr-3') elephant ID is:
+div #{elephantid}
+div.row
+div(class='elephantAttr mr-3') elephant Type is:
+div #{elephant_color}
+div.row
+div(class='elephantAttr mr-3') elephant Size is:
+div #{elephant_breed}
+div.row
+div(class='elephantAttr mr-3') elephant Cost is:
+div #{elephant_price}
