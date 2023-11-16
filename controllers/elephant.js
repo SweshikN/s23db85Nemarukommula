@@ -76,10 +76,10 @@ exports.elephant_update_put = async function(req, res) {
     try {
     let toUpdate = await elephant.findById( req.params.id)
     // Do updates of properties
-    if(req.body.elephant_type)
-    toUpdate.elephant_type = req.body.elephant_type;
-    if(req.body.cost) toUpdate.cost = req.body.cost;
-    if(req.body.size) toUpdate.size = req.body.size;
+    if(req.body.elephant_color)
+    toUpdate.elephant_color = req.body.elephant_color;
+    if(req.body.breed) toUpdate.cost = req.body.breed;
+    if(req.body.price) toUpdate.size = req.body.price;
     let result = await toUpdate.save();
     console.log("Sucess " + result)
     res.send(result)
