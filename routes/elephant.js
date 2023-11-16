@@ -10,5 +10,6 @@ var router = express.Router();
 /* GET elephants */
 router.get('/', elephant_controlers.elephant_view_all_Page );
 router.get('/detail', elephant_controlers.elephant_view_one_Page);
+router.get('/create', costume_controlers.costume_create_Page);
 
 module.exports = router;
