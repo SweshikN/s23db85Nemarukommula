@@ -11,5 +11,6 @@ var router = express.Router();
 router.get('/', elephant_controlers.elephant_view_all_Page );
 router.get('/detail', elephant_controlers.elephant_view_one_Page);
 router.get('/create', elephant_controlers.elephant_create_Page);
+router.get('/update', costume_controlers.costume_update_Page);
 
 module.exports = router;

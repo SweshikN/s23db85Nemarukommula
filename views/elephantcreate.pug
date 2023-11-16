@@ -9,7 +9,7 @@ block content
    label.elephantAttr(for='elephant_breed') elephant Breed
    input#elephant_breed(type='text', name='elephant_breed')
   div.form-group
-   label.elephantAttr(for='elephant_price') elephant Cost
+   label.elephantAttr(for='elephant_price') elephant Cost 
    input#elephant_price(type='text', name='elephant_price')
   input(type="submit")
  script.
@@ -17,7 +17,7 @@ block content
     event.preventDefault();
     fetch(event.target.action, {
         method: 'POST',
-        body: new URLSearchParams(new FormData(event.target))
+        body: new URLSearchParams(new FormData(event.target)) 
     }).then((resp) => {
         return resp.json();
     }).then((body) => {
@@ -25,4 +25,4 @@ block content
     }).catch((error) => {
         alert("Save failed " + error )
     });
-   });
+   }); 
