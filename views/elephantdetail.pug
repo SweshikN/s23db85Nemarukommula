@@ -1,23 +1,23 @@
 extends layout
 block content
-h1= title
-if(toShow == null)
-    h2 No instance 
-else   
-- let elephantid = toShow._id
-- let elephant_color = toShow.elephant_color
-- let elephant_breed = toShow.elephant_breed
-- let elephant_price = toShow.elephant_price
-div
-div.row
-div(class='elephantAttr mr-3') elephant ID is:
-div #{elephantid}
-div.row
-div(class='elephantAttr mr-3') elephant Type is:
-div #{elephant_color}
-div.row
-div(class='elephantAttr mr-3') elephant Size is:
-div #{elephant_breed}
-div.row
-div(class='elephantAttr mr-3') elephant Cost is:
-div #{elephant_price}
+ h1= title
+ if(toShow == null)
+    h2 No instance to update
+ else
+ - let elephantid = toShow._id
+ - let elephant_color = toShow.elephant_color
+ - let elephant_breed = toShow.elephant_breed
+ - let elephant_price = toShow.elephant_price
+ div
+ div.row
+  div(class='elephantAttr mr-3') elephant ID is:
+  div #{elephantid}
+ div.row
+ div(class='elephantAttr mr-3') elephant Color is:
+ div #{elephant_color}
+ div.row
+ div(class='elephantAttr mr-3') elephant Breed is:
+ div #{elephant_breed}
+ div.row
+ div(class='elephantAttr mr-3') elephant Cost is:
+ div #{elephant_price}
