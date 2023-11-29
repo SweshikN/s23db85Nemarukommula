@@ -1,23 +1,31 @@
 extends layout
+
 block content
-    div(class="container-fluid")
-        h1= title
-    - let items = results;
-    - let o;
-        div(class="row")
-            each form,item in results
-                - let destination = `dispatch(\"/elephant/update?id=${form._id}\")`
-                div(class = "col-sm-2 bg-info" onclick=`buy(${item})`) #{form.elephant_color}              
-                div(class = "col-sm-2 bg-info" onclick=`buy(${item})`) #{form.elephant_breed}                
-                div(class = "col-sm-2 bg-info" onclick=`buy(${item})`) #{form.elephant_price}
-                   button.btn( class="btn-primary ml-1", onclick= destination) Update
-                hr
-    script.
-        function dispatch(path)
-        {
-           window.location.href=path
-        }
-        function buy(itemNo)
-        {
-            alert(`You purchased Item ${itemNo+1}`)
-        }
+  h1= title
+  //- - let items = ['elephant_type','quantity','cost']
+  - let items = results;
+  - let o;
+  script.
+    function buy(x){
+      alert('purchased item ' + x)
+   } 
+  div(class='container-fluid')
+    a(class="btn btn-info" href="/elephant/create") Create
+    div(class='row m-1')
+    div(class="row row-cols-1 row-cols-sm-4 g-6")
+      each item,index in items
+        - let destination = `dispatch(\"/elephant/update?id=${item._id}\")`
+        - let details = `dispatch(\"/elephant/detail?id=${item._id}\")` 
+      
+        div(class="elephantd text-black mb-3" class='col' class='elephantd' class='elephantd-body' class='elephantd-text' onclick='buy('+index+')') Item color is #{item.elephant_color}(Item breed is #{item.elephant_breed})price is #{item.elephant_price} 
+          <br><br>
+          span(class="btn btn-secondary", onclick= details) Details
+          <br>
+          a(class="btn btn-danger", href="/elephant/delete/?id="+item._id) Delete
+          <br>
+          button.btn( class="btn-success ml-1", onclick= destination) Update
+
+  script.
+    function dispatch(path){
+      window.location.href=path
+    }
